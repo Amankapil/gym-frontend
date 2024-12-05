@@ -16,7 +16,8 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
+        {!user ? "" : <Navbar />}
+
         <Routes>
           <Route exact path="/" element={!user ? <Login /> : <Dashboard />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
